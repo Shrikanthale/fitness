@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- TAILWINDCSS -->
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato"
+      rel="stylesheet"
+    />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+
+    <!-- <link href="debug.css" rel="stylesheet" /> -->
+
+    <style>
+      body {
+        font-family: "Lato", sans-serif;
+        padding: 0;
+        margin: 0;
+      }
+      
+      ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+  
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .btn{
+    text-decoration: none;
+    padding: 10px 10px;
+     background-color: rgba(255,122,0); 
+    text-align: end;
+    color: #fff;
+    border-radius: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    box-shadow: 0 12px 40px rgb(255,122,0, 0.4);
+  }
+  .video-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    z-index: 99999;
+    background-color: rgba(255,122,0,0.1);
+    display: flex;
+    justify-content: center;
+    align-items:flex-end;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s;
+  }
+  .video-container .close{
+    background-color: red;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .video-container video{
+    width: 90%;
+    max-width: 800px;
+    transform: scale(0);
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+    outline: none;
+    transition: all 0.3s;
+  }
+  .video-container.show{
+    pointer-events: all;
+    opacity: 1;
+  }
+
+  .video-container.show video{
+    transform: scale(1);
+  }
+
+
+    </style>
+
+    <title>Fitness Club</title>
+  </head>
+  <body>
+   <!--navbar-->
+   <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#blogs">blogs</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about">About</a></li>
+  <div class = "model">
+    <a href="#" class="btn">Watch video</a>
+
+           
+
+    <div class="video-container">
+      <span class="close">&#10006;</span>
+      <video src="https://youtu.be/O4i33Fk6YKA" controls></video>
+    </div>
+  </div>
+
+
+  <script>
+
+   const btn = document.querySelector('.btn');
+
+
+   const videoContainer = document.querySelector('.video-container');
+
+   const close = document.querySelector('.close');
+
+   btn.addEventListener('click',()=>{
+     videoContainer.classList.add('show')
+   })
+  
+   close.addEventListener('click',()=>{
+     videoContainer.classList.remove('show')
+   })
+  
+
+  </script>
+
+  </ul> 
+
+  
+
+   
+    
+    <div class="w-full h-auto bg-gray-50 py-3">
+      
+      <div class="w-11/12 md:w-9/12 bg-white h-auto mx-auto my-0 md:my-24 rounded-xl shadow-xl overflow-hidden">
+        
+        <div class="text-center text-3xl font-bold py-10 mt-3">
+          Fitness Plan
+        </div>
+
+        
+        <div class="flex flex-col md:flex-row flex-wrap">
+
+
+          
+          <div class="flex w-11/12 mx-auto md:w-4/12 flex-shrink-0 bg-red- flex-col items-center py-7">
+            
+            <div class="bg-yellow- p-5 rounded-full shadow-2xl">
+            </div>
+            
+            <div style="font-size: 50px">
+            <i class="fas fa-dumbbell" style="color:gold" ></i>
+          </div>
+          <div class="font-semibold mt-3">Dumbble WorkOut</div>
+            
+            <div class="text-center p-7">
+              This 5 day dumbbell only workout program only requires dumbbells and 
+              is perfect for those looking to build lean muscle mass at home or on the go!
+            </div>
+          </div>
+
+
+          
+          <div class="flex w-11/12 mx-auto md:w-4/12 flex-shrink-0 bg-red- flex-col items-center py-7">
+            
+            <div class="bg-yellow- p-5 rounded-full shadow-2xl"></div>
+            
+            <div style="font-size: 50px;">
+              <i class="fas fa-running" style="color: greenyellow;" ></i>
+            </div>
+            <div class="font-semibold mt-3">Running</div>
+            
+            <div class="text-center p-7">
+              Running at an easy pace builds endurance, promotes proper form, establishes routine and base mileage, and facilitates recovery.
+               This type of run should be your most common, making up about 65-80% of your mileage 
+            </div>
+          </div>
+
+          
+          <div class="flex w-11/12 mx-auto md:w-4/12 flex-shrink-0 bg-red- flex-col items-center py-7">
+           
+            <div class="bg-yellow- p-5 rounded-full shadow-2xl"></div>
+            <div style="font-size: 50px;">
+              <i class="fas fa-utensils" style="color:orangered"></i>
+            </div>
+            
+            <div class="font-semibold mt-3">Diet</div>
+            
+            <div class="text-center p-7">
+              No single food provides all the calories and nutrients the body needs to stay healthy. That’s why
+              a balanced diet consisting of macronutrients like carbohydrates, protein, and fat along with micronutrients
+              such as vitamins and minerals, is recommended.
+            </div>
+          </div>
+
+
+
+
+        </div>
+      
+    
+        
+        
+      
+        
+    
+    
+    
+    
+    
+    
+    </div>
+    </div>
+
+    
+
+
+    <!-- DEMO 2 -->
+    <div class="w-full h-auto">
+        <!-- MAIN CARD CONTAINER -->
+        <div class="w-10/12 md:w-3/12 mx-auto shadow-2xl">
+            <!-- IMAGE -->
+            <div>
+                <!-- <img src="https://www.w3schools.com/w3images/team2.jpg" /> -->
+                <img  src="Hrithik.jpg"/>
+            </div>
+            <!-- NAME -->
+            <div class="text-4xl text-center pt-4">
+               HR
+            </div>
+            <!-- PROFILE -->
+            <div class="text-xl text-center pt-4">
+                Founder
+            </div>
+            <!-- ALMA MATER -->
+            <div class="text-md text-center pt-4">
+                Bollywood Actor
+            </div>
+             <!-- ALMA MATER -->
+             <div class="text-md text-center text-2xl pt-4">
+                <i class="fab fa-dribbble mx-2"></i>
+                <i class="fab fa-twitter mx-2"></i>
+                <i class="fab fa-linkedin-in mx-2"></i>
+                <i class="fab fa-facebook-f mx-2"></i>
+            </div>
+            
+            <button class="w-full py-3 text-xl mt-4 bg-black text-white">Contact</button>
+            <br>
+            <br>
+            <br>
+
+
+
+
+
+            
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+  </body>
+</html>
